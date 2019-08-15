@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container" style="margin: auto; width: 50%; padding: 10px;">
+        <h1>Please login</h1>
+        <br>
+        <form action="" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control" style="width:70%; height: 30px; padding: 5px" placeholder="Username" name="user_name" value="{{
+            request.form.user_name }}">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" style="width:70%; height: 30px; padding: 5px; margin-top: 10px;" placeholder="Password" name="password"
+                    value="{{
+            request.form.password }}">
+            </div>
+            <input class="btn btn-success" type="submit" value="Login"
+                style="margin-top: 10px; padding: 10px 32px; text-align: center; background-color: #4CAF50; color: white"
+            >
+        </form>
+
+    {% if error %}
+        <p class="error" style="color: red" ><strong>Error:</strong> {{ error }}
+    {% endif %}
+</div>
+{% endblock %}
